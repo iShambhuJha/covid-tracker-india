@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: #303030;
+    background-color: #0D1117;
 }
 .container{
     display: grid;
@@ -16,18 +16,16 @@
     grid-gap: 0.2rem;
 }
 nav{
-    background-color: red;
     grid-area: nav;
 }
 #tabs{
-    background-color: green;
+    border-bottom: 1px solid #30363d!important;
     grid-area: tabs;
 }
 main{
-    background-color: orange;
+    border: 1px solid yellow;
     grid-area: main;
 }
 #sidebar{
-
     grid-area: sidebar;
 }
