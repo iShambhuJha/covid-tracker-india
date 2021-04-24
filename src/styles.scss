@@ -2,4 +2,13 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+.secondary-background-color{
+    background-color: #21262D !important;
+}
+.align-center{
+    text-align: center;
+}
+.card-counts{
+    text-align: right;
+    margin: 0 16px;
+}
