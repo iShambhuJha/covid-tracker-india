@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: #303030;
+}
+.container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 0.4fr 0.3fr 3fr;
+    grid-template-areas:
+    "nav nav"
+    "sidebar tabs"
+    "sidebar main"
+    ;
+    grid-gap: 0.2rem;
+}
+nav{
+    background-color: red;
+    grid-area: nav;
+}
+#tabs{
+    background-color: green;
+    grid-area: tabs;
+}
+main{
+    background-color: orange;
+    grid-area: main;
+}
+#sidebar{
+
+    grid-area: sidebar;
+}
