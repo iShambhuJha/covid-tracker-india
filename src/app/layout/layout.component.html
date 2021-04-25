@@ -3,6 +3,7 @@
 <router-outlet></router-outlet>
 <app-tabs-section></app-tabs-section>
 <app-main-section></app-main-section> -->
+<div class="layout">
 <div class="container">
     <nav>
         <app-navbar></app-navbar>
@@ -11,7 +12,9 @@
         <app-tabs-section></app-tabs-section>
     </div>
     <main>
-        <app-main-section></app-main-section>
+        <!-- <app-main-section> -->
+            <router-outlet></router-outlet>
+        <!-- </app-main-section> -->
     </main>
     <div id="sidebar">
         <app-sidebar>
@@ -20,3 +23,4 @@
     </div>
 </div>
 
+</div>
