@@ -1,5 +1,6 @@
 .dasboard-table-block{
     border-radius: 15px;
+    margin-top: 20px;
     border: 1px solid #30363d!important;
 }
 table {
@@ -19,6 +20,10 @@ table {
   border-spacing:04px;
   background-color: #0D1117;
 }  
+th.mat-header-cell{
+  color: white !important;
+  font-size: 1em;
+}
 th.mat-header-cell, .mat-cell {
   text-align: center !important;
 }
