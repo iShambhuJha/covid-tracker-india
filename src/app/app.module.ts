@@ -11,6 +11,7 @@ import { MainSectionComponent } from './shared/main-section/main-section.compone
 import { LayoutComponent } from './layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
+import { StatesComponent } from './states/states.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AngularMaterialModule } from './angular-material.module';
     TabsSectionComponent,
     SidebarComponent,
     MainSectionComponent,
-    LayoutComponent
+    LayoutComponent,
+    StatesComponent
   ],
   imports: [
     BrowserModule,
