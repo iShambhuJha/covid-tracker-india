@@ -17,16 +17,16 @@ export class TabsSectionComponent implements OnInit {
           index: 0
       }, {
           label: 'States',
-          link: './dashboard',
+          link: './states',
           index: 1
       }, {
           label: 'Districts',
-          link: './dashboard',
+          link: './districts',
           index: 2
       }, 
       {
         label: 'Resources',
-        link: './test',
+        link: './resources',
         index: 2
     }, 
   ];

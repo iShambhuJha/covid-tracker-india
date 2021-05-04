@@ -12,6 +12,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { StatesComponent } from './states/states.component';
+import { DistrictsComponent } from './districts/districts.component';
+import { ResourcesComponent } from './resources/resources.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { StatesComponent } from './states/states.component';
     SidebarComponent,
     MainSectionComponent,
     LayoutComponent,
-    StatesComponent
+    StatesComponent,
+    DistrictsComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,
