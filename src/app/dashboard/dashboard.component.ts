@@ -34,7 +34,8 @@ export class DashboardComponent implements OnInit {
   // displayedColumns: string[] = ['state', 'confirmed', 'active', 'recovered', 'deaths', 
   // 'tested', 'vaccinated', 'population'];
   displayedColumns: string[] = ['state', 'confirmed', 'active', 'recovered', 'deaths'];
-  dataSource = ELEMENT_DATA;
+  // dataSource = ELEMENT_DATA;
+  dataSource:any;
   constructor(private _CovidAllData:CovidAllData) { }
 
   ngOnInit(): void {
