@@ -44,7 +44,7 @@ export class DashboardComponent implements OnInit {
   // To get all covid data
   getAllCovidData(): void {
     this._CovidAllData.getCovidData().subscribe(res=>{
-     console.table(res.statewise)
+    //  console.table(res.cases_time_series)
       this.stateWise = res.statewise;
       this.dataSource = this.stateWise;
 
