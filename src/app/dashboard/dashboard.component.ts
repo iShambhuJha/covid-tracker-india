@@ -30,8 +30,10 @@ const ELEMENT_DATA: StateOverview[] = [
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  displayedColumns: string[] = ['state', 'confirmed', 'active', 'recovered', 'deceased', 
-  'tested', 'vaccinated', 'population'];
+  stateWise=[];
+  // displayedColumns: string[] = ['state', 'confirmed', 'active', 'recovered', 'deaths', 
+  // 'tested', 'vaccinated', 'population'];
+  displayedColumns: string[] = ['state', 'confirmed', 'active', 'recovered', 'deaths'];
   dataSource = ELEMENT_DATA;
   constructor(private _CovidAllData:CovidAllData) { }
 
@@ -42,6 +44,8 @@ export class DashboardComponent implements OnInit {
   getAllCovidData(): void {
     this._CovidAllData.getCovidData().subscribe(res=>{
      console.table(res.statewise)
+      this.stateWise = res.statewise;
+      this.dataSource = this.stateWise;
 
     });
  }

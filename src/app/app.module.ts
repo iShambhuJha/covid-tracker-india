@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { LOCALE_ID } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { DistrictsComponent } from './districts/districts.component';
 import { ResourcesComponent } from './resources/resources.component';
 import { DataClientService } from './core/services/data-client.service';
 import { HttpClientModule } from '@angular/common/http';
+import "@angular/common/locales/global/en-IN";
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
     AngularMaterialModule,
     HttpClientModule
   ],
-  providers: [DataClientService],
+  providers: [DataClientService,
+    { provide: LOCALE_ID, useValue: "en-IN" }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
