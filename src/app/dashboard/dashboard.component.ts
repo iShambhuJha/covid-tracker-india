@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CovidAllData } from '../core/services/covid-all-data.service';
 export interface StateOverview {
   state: string;
   confirmed: string;
@@ -32,9 +33,16 @@ export class DashboardComponent implements OnInit {
   displayedColumns: string[] = ['state', 'confirmed', 'active', 'recovered', 'deceased', 
   'tested', 'vaccinated', 'population'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  constructor(private _CovidAllData:CovidAllData) { }
 
   ngOnInit(): void {
+    this.getAllCovidData();
   }
+  // To get all covid data
+  getAllCovidData(): void {
+    this._CovidAllData.getCovidData().subscribe(res=>{
+     console.table(res.statewise)
 
+    });
+ }
 }

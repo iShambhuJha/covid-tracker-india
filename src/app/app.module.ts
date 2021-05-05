@@ -14,6 +14,8 @@ import { AngularMaterialModule } from './angular-material.module';
 import { StatesComponent } from './states/states.component';
 import { DistrictsComponent } from './districts/districts.component';
 import { ResourcesComponent } from './resources/resources.component';
+import { DataClientService } from './core/services/data-client.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,9 +34,10 @@ import { ResourcesComponent } from './resources/resources.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
