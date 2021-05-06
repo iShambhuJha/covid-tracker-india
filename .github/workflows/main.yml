@@ -16,5 +16,6 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BASE_BRANCH: main
         BRANCH: gh-pages
+        BASE_HREF: https://iShambhuJha.github.io/covid-tracker-india/
         FOLDER: dist/covid-tracker-india
         BUILD_SCRIPT: npm install && npm run build -- --prod
