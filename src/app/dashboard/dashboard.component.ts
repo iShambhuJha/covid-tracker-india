@@ -10,20 +10,6 @@ export interface StateOverview {
   vaccinated: string;
   population: string;
 }
-
-const ELEMENT_DATA: StateOverview[] = [
-  {state: 'Delhi', confirmed: '12,34,345', active: '02,23,121', recovered: '10,23,232', deceased:'2311', tested: '21,23,212', vaccinated: '11,23,190', population: '12,23,32,123'},
-  {state: 'west Bengal', confirmed: '45,67,543', active: '05,43,213', recovered: '11,23,212', deceased:'2311', tested: '21,23,212', vaccinated: '11,23,190', population: '12,23,32,123'},
-  {state: 'Delhi', confirmed: '12,34,345', active: '02,23,121', recovered: '10,23,232', deceased:'2311', tested: '21,23,212', vaccinated: '11,23,190', population: '12,23,32,123'},
-  {state: 'west Bengal', confirmed: '45,67,543', active: '05,43,213', recovered: '11,23,212', deceased:'2311', tested: '21,23,212', vaccinated: '11,23,190', population: '12,23,32,123'},
-  {state: 'Delhi', confirmed: '12,34,345', active: '02,23,121', recovered: '10,23,232', deceased:'2311', tested: '21,23,212', vaccinated: '11,23,190', population: '12,23,32,123'},
-  {state: 'west Bengal', confirmed: '45,67,543', active: '05,43,213', recovered: '11,23,212', deceased:'2311', tested: '21,23,212', vaccinated: '11,23,190', population: '12,23,32,123'},
-  {state: 'Delhi', confirmed: '12,34,345', active: '02,23,121', recovered: '10,23,232', deceased:'2311', tested: '21,23,212', vaccinated: '11,23,190', population: '12,23,32,123'},
-  {state: 'west Bengal', confirmed: '45,67,543', active: '05,43,213', recovered: '11,23,212', deceased:'2311', tested: '21,23,212', vaccinated: '11,23,190', population: '12,23,32,123'},
-  {state: 'Delhi', confirmed: '12,34,345', active: '02,23,121', recovered: '10,23,232', deceased:'2311', tested: '21,23,212', vaccinated: '11,23,190', population: '12,23,32,123'},
-  {state: 'west Bengal', confirmed: '45,67,543', active: '05,43,213', recovered: '11,23,212', deceased:'2311', tested: '21,23,212', vaccinated: '11,23,190', population: '12,23,32,123'},
-  
-];
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -34,7 +20,6 @@ export class DashboardComponent implements OnInit {
   // displayedColumns: string[] = ['state', 'confirmed', 'active', 'recovered', 'deaths', 
   // 'tested', 'vaccinated', 'population'];
   displayedColumns: string[] = ['state', 'confirmed', 'active', 'recovered', 'deaths'];
-  // dataSource = ELEMENT_DATA;
   dataSource:any;
   constructor(private _CovidAllData:CovidAllData) { }
 
@@ -44,7 +29,8 @@ export class DashboardComponent implements OnInit {
   // To get all covid data
   getAllCovidData(): void {
     this._CovidAllData.getCovidData().subscribe(res=>{
-    //  console.table(res.cases_time_series)
+     console.log(res,'cases_time_series')
+     sessionStorage.setItem('allCovidData', JSON.stringify(res));
       this.stateWise = res.statewise;
       this.dataSource = this.stateWise;
 
