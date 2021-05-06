@@ -12,6 +12,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.16.1
+    - name: Checkout
+      uses: actions/checkout@main    
     - name: deploy
       uses: iShambhuJha/covid-tracker-india@main
      
