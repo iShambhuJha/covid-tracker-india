@@ -12,6 +12,9 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.16.1
+    - name: deploy
+      uses: iShambhuJha/covid-tracker-india@main
+     
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BASE_BRANCH: main
