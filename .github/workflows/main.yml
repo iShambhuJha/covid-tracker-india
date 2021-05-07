@@ -7,11 +7,13 @@ jobs:
 
     runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@main
     - name: Use Node.js 14.16.1
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@main
       with:
         node-version: 14.16.1
+    - name: Checkout
+      uses: actions/checkout@main    
     - name: deploy
       uses: iShambhuJha/covid-tracker-india@main
      
