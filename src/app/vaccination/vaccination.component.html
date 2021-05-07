@@ -31,8 +31,14 @@
                     Sessions: {{slot.sessions.length}}
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <mat-divider></mat-divider>
-              <p>I'm visible because I am open</p>
+              <mat-divider></mat-divider><br>
+              <mat-chip-list *ngFor="let session of slot.sessions;let i=index">
+                <mat-chip>{{i+1}} .</mat-chip>
+                <mat-chip>{{session.date}}</mat-chip>
+                <mat-chip>Avl: {{session.available_capacity}}</mat-chip>
+                <mat-chip>{{session.vaccine}}</mat-chip>
+                <mat-chip>Slots: {{session.slots}}</mat-chip>
+              </mat-chip-list>
             </mat-expansion-panel>
           </mat-accordion>
         </mat-card>
