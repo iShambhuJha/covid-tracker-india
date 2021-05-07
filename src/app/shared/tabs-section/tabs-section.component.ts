@@ -27,8 +27,13 @@ export class TabsSectionComponent implements OnInit {
       {
         label: 'Resources',
         link: './resources',
-        index: 2
+        index: 3
     }, 
+    {
+      label: 'Vaccination',
+      link: './vaccination',
+      index: 4
+  }, 
   ];
    }
 

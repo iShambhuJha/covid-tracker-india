@@ -18,6 +18,7 @@ import { ResourcesComponent } from './resources/resources.component';
 import { DataClientService } from './core/services/data-client.service';
 import { HttpClientModule } from '@angular/common/http';
 import "@angular/common/locales/global/en-IN";
+import { VaccinationComponent } from './vaccination/vaccination.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import "@angular/common/locales/global/en-IN";
     LayoutComponent,
     StatesComponent,
     DistrictsComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    VaccinationComponent
   ],
   imports: [
     BrowserModule,
