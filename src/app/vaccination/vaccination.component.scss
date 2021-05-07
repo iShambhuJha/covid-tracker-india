@@ -1,0 +1,57 @@
+.form-inline {  
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  
+  .form-inline label {
+    margin: 5px 10px 5px 0;
+  }
+  
+  .form-inline input, .date-picker {
+    width: 250px;
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #060A0F;
+    border: 1px solid #21262d;
+    border-radius: 6px;
+  }
+  
+  .form-inline button {
+    padding: 10px 20px;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    color: #c9d1d9;
+    cursor: pointer;
+    transition: .2s cubic-bezier(.3,0,.5,1);
+    border-radius: 6px;
+  }
+  
+  .form-inline button:hover {
+    background-color: #30363d;
+  }
+  
+  @media (max-width: 800px) {
+    .form-inline input {
+      margin: 10px 0;
+    }
+    
+    .form-inline {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  .card-first-tab{
+      margin: 10px;
+      background-color: transparent;
+    //   border:1px solid #30363d
+  }
+  .date-picker{
+      width: 250px;
+      color: #757575 !important;
+
+  }
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(50%);
+}
