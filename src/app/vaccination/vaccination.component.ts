@@ -28,6 +28,6 @@ export class VaccinationComponent implements OnInit {
     const headers = new HttpHeaders().set("Accept", "*/*").set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36");
 
     const options = { params: params, headers: headers };
-    // this._CovidAllData.getVaccineSlots(params).subscribe((res) => {});
+    this._CovidAllData.getVaccineSlots(params).subscribe((res) => {});
   }
 }

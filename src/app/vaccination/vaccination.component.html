@@ -6,8 +6,7 @@
             <label for="pin">Pin Code:</label>
             <input  id="pin" [(ngModel)]="pinCode" placeholder="Pin Code" name="pin">
             <label for="date">Date:</label>
-            <input class="date-picker"  [(ngModel)]="datePicker" type="date" id="date" placeholder="dd-mm-yyyy" value=""
-            min="1997-01-01" max="2030-12-31" name="slotDate">
+            <input  [(ngModel)]="datePicker"id="date" placeholder="dd-mm-yyyy" value="">
             <button type="button" (click)="getAllVaccinationSlots()">Check Availability</button>
           </form>
         </mat-card> 
