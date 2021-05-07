@@ -19,6 +19,7 @@ import { DataClientService } from './core/services/data-client.service';
 import { HttpClientModule } from '@angular/common/http';
 import "@angular/common/locales/global/en-IN";
 import { VaccinationComponent } from './vaccination/vaccination.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { VaccinationComponent } from './vaccination/vaccination.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [DataClientService,
     { provide: LOCALE_ID, useValue: "en-IN" }],

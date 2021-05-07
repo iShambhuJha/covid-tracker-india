@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  serviceUrl: 'https://api.covid19india.org'
+  serviceUrl: 'https://api.covid19india.org',
+  cowinUrl: 'https://cdn-api.co-vin.in/api'
 };
 
 /*
