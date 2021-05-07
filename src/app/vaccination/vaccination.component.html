@@ -10,6 +10,32 @@
             <button type="button" (click)="getAllVaccinationSlots()">Check Availability</button>
           </form>
         </mat-card> 
+        <mat-card class="card-first-tab">
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false" class="slot-panel">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                    BGH BOKARO
+                </mat-panel-title>
+                <mat-panel-title>
+                    BGH BOKARO STEEL CITY
+                </mat-panel-title>
+                <mat-panel-title>
+                    Chas
+                </mat-panel-title>
+                <mat-panel-title>
+                    Free
+                </mat-panel-title>
+                <mat-panel-title>
+                    Sessions: 2
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-divider></mat-divider>
+              <p>I'm visible because I am open</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </mat-card>
     </mat-tab>
     <mat-tab label="Age: 45+">Content 2</mat-tab>
     <mat-tab label="Notify Slot Availability">Content 3</mat-tab>

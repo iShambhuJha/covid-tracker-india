@@ -1,5 +1,6 @@
 import { HttpHeaders, HttpParams } from "@angular/common/http";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { MatAccordion } from "@angular/material/expansion";
 import { CovidAllData } from "../core/services/covid-all-data.service";
 
 @Component({
@@ -10,6 +11,7 @@ import { CovidAllData } from "../core/services/covid-all-data.service";
 export class VaccinationComponent implements OnInit {
   pinCode: any;
   datePicker: any;
+  panelOpenState = false;
   constructor(private _CovidAllData: CovidAllData) {}
 
   ngOnInit(): void {}
