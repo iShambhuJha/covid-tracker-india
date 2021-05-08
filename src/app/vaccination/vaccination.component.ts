@@ -18,6 +18,11 @@ export class VaccinationComponent implements OnInit {
   slotForEighteenPlus: any = [];
   slotForFortyFivePlus: any = [];
   allData: any = [];
+  username:any;
+  emailId:any;
+  userpin:any;
+  userAgeChoice: any="18";
+  isSuccess: boolean=false;
   constructor(private _CovidAllData: CovidAllData) {}
 
   ngOnInit(): void {
@@ -103,6 +108,20 @@ export class VaccinationComponent implements OnInit {
           }
         });
         console.log(this.slotForFortyFivePlus, "this.slotForFortyFivePlus");
+      });
+    }
+
+    // To post user details to firebase db
+    submitUserData(){
+      this.isSuccess=false;
+      var obj={
+        'username':this.username,
+        'email': this.emailId,
+        'pincode': this.userpin,
+        'userAgeChoice': this.userAgeChoice
+      }
+      this._CovidAllData.submitUserDetails(obj).subscribe(res=>{
+        this.isSuccess=true;
       });
     }
 }

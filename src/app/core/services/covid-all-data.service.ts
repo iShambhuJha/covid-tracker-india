@@ -20,4 +20,9 @@ export class CovidAllData {
   getVaccineSlots(params:any): Observable<any> {
     return this._DataClientService.get<any>(HttpUrls.GET_ALL_VACCINE_SLOTS,params);
   }
+
+    // TO POST USER DETAILS TO FIREBASE
+    submitUserDetails(userdata:any): Observable<any> {
+      return this._DataClientService.post<any>(HttpUrls.POST_USER_DETAILS,userdata);
+    }
 }
