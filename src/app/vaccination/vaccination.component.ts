@@ -9,8 +9,8 @@ import { CovidAllData } from "../core/services/covid-all-data.service";
   styleUrls: ["./vaccination.component.scss"],
 })
 export class VaccinationComponent implements OnInit {
-  pinCode: any;
-  datePicker: any;
+  pinCode: any="110006";
+  datePicker: any="08-05-2021";
   panelOpenState = false;
   slotDetails: any = [];
   slotForEighteenPlus: any = [];
@@ -18,7 +18,9 @@ export class VaccinationComponent implements OnInit {
   allData: any = [];
   constructor(private _CovidAllData: CovidAllData) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllVaccinationSlotsForEighteenPlus();
+  }
   // To get all vaccination data by pincode for 18+
   getAllVaccinationSlotsForEighteenPlus(): void {
     this.slotForEighteenPlus = [];
@@ -30,8 +32,8 @@ export class VaccinationComponent implements OnInit {
       }),
     };
     let params = new HttpParams();
-    params = params.append("pincode", "110006");
-    params = params.append("date", "08-05-2021");
+    params = params.append("pincode", this.pinCode);
+    params = params.append("date", this.datePicker);
     const headers = new HttpHeaders()
       .set("Accept", "*/*")
       .set(
