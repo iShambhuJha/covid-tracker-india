@@ -12,13 +12,17 @@ export class VaccinationComponent implements OnInit {
   pinCode: any;
   datePicker: any;
   panelOpenState = false;
-  slotDetails:any=[];
+  slotDetails: any = [];
+  slotForEighteenPlus: any = [];
+  slotForFortyFivePlus: any = [];
+  allData: any = [];
   constructor(private _CovidAllData: CovidAllData) {}
 
   ngOnInit(): void {}
-  // To get all vaccination data by pincode
-  getAllVaccinationSlots(): void {
-    console.log('datePic',this.datePicker)
+  // To get all vaccination data by pincode for 18+
+  getAllVaccinationSlotsForEighteenPlus(): void {
+    this.slotForEighteenPlus = [];
+    this.slotForFortyFivePlus = [];
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json",
@@ -26,13 +30,29 @@ export class VaccinationComponent implements OnInit {
       }),
     };
     let params = new HttpParams();
-    params = params.append("pincode", '827013');
-    params = params.append("date", "07-05-2021");
-    const headers = new HttpHeaders().set("Accept", "*/*").set("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36");
+    params = params.append("pincode", "110006");
+    params = params.append("date", "08-05-2021");
+    const headers = new HttpHeaders()
+      .set("Accept", "*/*")
+      .set(
+        "User-Agent",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36"
+      );
 
     const options = { params: params, headers: headers };
     this._CovidAllData.getVaccineSlots(params).subscribe((res) => {
-      this.slotDetails=res.centers;
+      this.slotForEighteenPlus = res.centers;
+      this.allData = res.centers;
+      console.log(this.slotForEighteenPlus, "this.total");
+      this.slotForEighteenPlus.map((data: any = []) => {
+        data["sessions"].map((ele: any) => {
+          if (ele.min_age_limit == 45) {
+            const index = data["sessions"].indexOf(ele);
+            data["sessions"].splice(index)
+          }
+        });
+      });
+      console.log(this.slotForEighteenPlus, "this.slotForEighteenPlus");
     });
   }
 }

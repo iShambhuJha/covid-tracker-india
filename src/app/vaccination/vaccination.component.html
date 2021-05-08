@@ -1,48 +1,66 @@
+<mat-tab-group animationDuration="0ms" style="border: 1px solid #30363d">
+  <mat-tab label="Age: 18 to 44">
+    <mat-card class="card-first-tab">
+      <form class="form-inline">
+        <label for="pin">Pin Code:</label>
+        <input
+          id="pin"
+          [(ngModel)]="pinCode"
+          placeholder="Pin Code"
+          name="pin"
+        />
+        <label for="date">Date:</label>
+        <input
+          [(ngModel)]="datePicker"
+          id="date"
+          placeholder="dd-mm-yyyy"
+          value=""
+        />
+        <button type="button" (click)="getAllVaccinationSlotsForEighteenPlus()">
+          Check Availability
+        </button>
+      </form>
+    </mat-card>
+    <mat-card class="card-first-tab">
+      <div *ngFor="let slot of slotForEighteenPlus">
+      <mat-accordion *ngIf="slot.sessions.length!=0">
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false" class="slot-panel" style="background-color: #0D1117;">
+            <mat-expansion-panel-header  class="slot-panel-header">
+              <mat-panel-title style="width:30%">
+                {{slot.name| titlecase}}
+              </mat-panel-title>
+              <mat-panel-title  style="width:30%">
+               {{slot.address}}
+              </mat-panel-title>
+              <mat-panel-title *ngIf="slot.block_name!='Not Applicable'"  style="width:15%">
+                 {{slot.block_name}}
+              </mat-panel-title>
+              <mat-panel-title *ngIf="slot.block_name=='Not Applicable'"  style="width:15%">
+                {{slot.district_name}}
+             </mat-panel-title>
+              <mat-panel-title  style="width:15%">
+                  Fee Type: {{slot.fee_type}}
+              </mat-panel-title>
+              <mat-panel-title  style="width:10%">
+                  Sessions: {{slot.sessions.length}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider><br>
+            <mat-chip-list *ngFor="let session of slot.sessions;let i=index">
+              <mat-chip [ngClass]="session.available_capacity==0 ? 'isNotAvl' : ''">{{i+1}} .</mat-chip>
+              <mat-chip [ngClass]="session.available_capacity==0 ? 'isNotAvl' : ''">{{session.date}}</mat-chip>
+              <mat-chip [ngClass]="session.available_capacity==0 ? 'isNotAvl' : ''">Avl: {{session.available_capacity}}</mat-chip>
+              <mat-chip [ngClass]="session.available_capacity==0 ? 'isNotAvl' : ''">{{session.vaccine}}</mat-chip>
+              <mat-chip [ngClass]="session.available_capacity==0 ? 'isNotAvl' : ''">Slots: {{session.slots}}</mat-chip>
+            </mat-chip-list>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      </mat-card>
+  </mat-tab>
+  <mat-tab label="Age: 45+">
 
-<mat-tab-group animationDuration="0ms" style="border:1px solid #30363d">
-    <mat-tab label="Age: 18 to 44">
-        <mat-card class="card-first-tab">
-        <form class="form-inline">
-            <label for="pin">Pin Code:</label>
-            <input  id="pin" [(ngModel)]="pinCode" placeholder="Pin Code" name="pin">
-            <label for="date">Date:</label>
-            <input  [(ngModel)]="datePicker"id="date" placeholder="dd-mm-yyyy" value="">
-            <button type="button" (click)="getAllVaccinationSlots()">Check Availability</button>
-          </form>
-        </mat-card> 
-        <mat-card class="card-first-tab">
-        <mat-accordion *ngFor="let slot of slotDetails">
-            <mat-expansion-panel (opened)="panelOpenState = true"
-                                 (closed)="panelOpenState = false" class="slot-panel" style="background-color: #0D1117;">
-              <mat-expansion-panel-header  class="slot-panel-header">
-                <mat-panel-title style="width:30%">
-                   Center: {{slot.name| titlecase}}
-                </mat-panel-title>
-                <mat-panel-title  style="width:30%">
-                  Address: {{slot.address}}
-                </mat-panel-title>
-                <mat-panel-title  style="width:20%">
-                    Block: {{slot.block_name}}
-                </mat-panel-title>
-                <mat-panel-title  style="width:10%">
-                    Fee: {{slot.fee_type}}
-                </mat-panel-title>
-                <mat-panel-title  style="width:10%">
-                    Sessions: {{slot.sessions.length}}
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <mat-divider></mat-divider><br>
-              <mat-chip-list *ngFor="let session of slot.sessions;let i=index">
-                <mat-chip>{{i+1}} .</mat-chip>
-                <mat-chip>{{session.date}}</mat-chip>
-                <mat-chip>Avl: {{session.available_capacity}}</mat-chip>
-                <mat-chip>{{session.vaccine}}</mat-chip>
-                <mat-chip>Slots: {{session.slots}}</mat-chip>
-              </mat-chip-list>
-            </mat-expansion-panel>
-          </mat-accordion>
-        </mat-card>
-    </mat-tab>
-    <mat-tab label="Age: 45+">Content 2</mat-tab>
-    <mat-tab label="Notify Slot Availability">Content 3</mat-tab>
-  </mat-tab-group>
+  </mat-tab>
+  <mat-tab label="Notify Slot Availability">Content 3</mat-tab>
+</mat-tab-group>
