@@ -27,6 +27,7 @@ export class VaccinationComponent implements OnInit {
 
   ngOnInit(): void {
     // this.getAllVaccinationSlotsForEighteenPlus();
+    this.notifyAvailSlotToUser()
   }
   // To get all vaccination data by pincode for 18+
   getAllVaccinationSlotsForEighteenPlus(): void {
@@ -122,6 +123,13 @@ export class VaccinationComponent implements OnInit {
       }
       this._CovidAllData.submitUserDetails(obj).subscribe(res=>{
         this.isSuccess=true;
+      });
+    }
+
+    //notify user about slot availability thru email
+    notifyAvailSlotToUser(){
+      this._CovidAllData.getUserDetails().subscribe(res=>{
+        console.log(res,'responseNotif')
       });
     }
 }

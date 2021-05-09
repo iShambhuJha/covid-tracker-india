@@ -25,4 +25,9 @@ export class CovidAllData {
     submitUserDetails(userdata:any): Observable<any> {
       return this._DataClientService.post<any>(HttpUrls.POST_USER_DETAILS,userdata);
     }
+
+    // TO FETCH ALL USER DATA
+    getUserDetails(){
+      return this._DataClientService.get<any>(HttpUrls.GET_USER_DETAILS);
+    }
 }
