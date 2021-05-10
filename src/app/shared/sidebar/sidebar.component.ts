@@ -8,6 +8,7 @@ import { CovidAllData } from 'src/app/core/services/covid-all-data.service';
 })
 export class SidebarComponent implements OnInit {
   casesStats:any;
+  prevDayStats:any;
   constructor(private _CovidAllData:CovidAllData) { }
 
   ngOnInit(): void {
@@ -17,8 +18,10 @@ export class SidebarComponent implements OnInit {
   getAllCovidData(): void {
     this._CovidAllData.getCovidData().subscribe(res=>{
      console.table(res.cases_time_series);
-      this.casesStats = res.cases_time_series[res.cases_time_series.length-1]
+      this.casesStats = res.cases_time_series[res.cases_time_series.length-1];
+      this.prevDayStats = res.cases_time_series[res.cases_time_series.length-2];
       console.log('casesstas',this.casesStats)
+      console.log('this.prevDayStats', this.prevDayStats)
     });
  }
 }
