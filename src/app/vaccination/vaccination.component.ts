@@ -74,8 +74,9 @@ export class VaccinationComponent implements OnInit {
             data["totalVaccine"] = totalAvl;
           }
         }
+        console.log(this.slotForEighteenPlus, "this.mapeighteen");
       });
-      console.log(this.slotForEighteenPlus, "this.slotForEighteenPlus");
+
     });
   }
   // To get all vaccination data by pincode for 45+
@@ -123,10 +124,10 @@ export class VaccinationComponent implements OnInit {
   submitUserData() {
     this.isSuccess = false;
     var obj = {
-      username: this.username,
+      name: this.username,
       email: this.emailId,
-      pincode: this.userpin,
-      userAgeChoice: this.userAgeChoice,
+      pin: this.userpin,
+      age: this.userAgeChoice,
     };
     this._CovidAllData.submitUserDetails(obj).subscribe((res) => {
       this.isSuccess = true;
@@ -136,7 +137,7 @@ export class VaccinationComponent implements OnInit {
   //notify user about slot availability thru email
   notifyAvailSlotToUser() {
     this._CovidAllData.getUserDetails().subscribe((res) => {
-      console.log(res, "responseNotif");
+      console.log(res[0], "responseNotif");
     });
   }
 }

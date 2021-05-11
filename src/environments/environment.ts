@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   serviceUrl: 'https://api.covid19india.org',
   cowinUrl: 'https://cdn-api.co-vin.in/api',
-  fbUrl: 'https://covid-tracker-india-9e179-default-rtdb.firebaseio.com'
+  fbUrl: 'https://covid-tracker-india-9e179-default-rtdb.firebaseio.com',
+  herokuUrl:'https://notify-nodemailer.herokuapp.com'
 };
 
 /*
