@@ -15,6 +15,7 @@ table {
 }
 .table-row:hover{
   background-color: #0D1117;
+  cursor: pointer;
 }
 .mat-table {
   border-collapse: separate;
@@ -30,4 +31,8 @@ th.mat-header-cell, .mat-cell {
 }
 tr.mat-header-row {
   height: 40px;
+}
+.mat-icon {
+  font-size: 20px !important;
+  vertical-align: middle;
 }
