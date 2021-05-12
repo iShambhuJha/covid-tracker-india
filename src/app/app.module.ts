@@ -20,6 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
 import "@angular/common/locales/global/en-IN";
 import { VaccinationComponent } from './vaccination/vaccination.component';
 import { FormsModule } from '@angular/forms';
+import { CdkDetailRowDirective } from './shared/expand-row.directive';
+import { CdkTableModule } from '@angular/cdk/table';
+import { CdkTreeModule } from '@angular/cdk/tree';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     StatesComponent,
     DistrictsComponent,
     ResourcesComponent,
-    VaccinationComponent
+    VaccinationComponent,
+    CdkDetailRowDirective
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CdkTableModule,
+    CdkTreeModule,
   ],
   providers: [DataClientService,
     { provide: LOCALE_ID, useValue: "en-IN" }],
