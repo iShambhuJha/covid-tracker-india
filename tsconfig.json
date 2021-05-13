@@ -9,6 +9,8 @@
     "strict": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "strictNullChecks":false,
+    "noImplicitAny": false,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,

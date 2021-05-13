@@ -14,8 +14,10 @@ export class CovidAllData {
   // TO FETCH ALL COVID DATa
   getCovidData(): Observable<any> {
     return this._DataClientService.get<any>(HttpUrls.GET_ALL_COVID_DATA);
+  }  // TO FETCH ALL COVID DATa
+  getCovidCounts(): Observable<any> {
+    return this._DataClientService.get<any>(HttpUrls.GET_ALL_COVID_COUNTS);
   }
-
   // TO FETCH ALL COVID VACCINE SLOTS
   getVaccineSlots(params:any): Observable<any> {
     return this._DataClientService.get<any>(HttpUrls.GET_ALL_VACCINE_SLOTS,params);
