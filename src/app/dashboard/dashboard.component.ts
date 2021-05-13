@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CovidAllData } from '../core/services/covid-all-data.service';
 import { animate, state, style, transition, trigger } from '@angular/animations';
+import * as d3 from 'd3';
 export interface StateOverview {
   state: string;
   confirmed: string;

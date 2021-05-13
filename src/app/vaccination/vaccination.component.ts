@@ -59,11 +59,11 @@ export class VaccinationComponent implements OnInit {
 
     const options = { params: params, headers: headers };
     this._CovidAllData.getVaccineSlots(params).subscribe((res) => {
-      var totalAvl = 0;
       this.slotForEighteenPlus = res.centers;
       this.allData = res.centers;
       console.log(this.slotForEighteenPlus, "this.total");
       this.slotForEighteenPlus.map((data: any = []) => {
+        var totalAvl = 0;
         for (var i = 0; i < data["sessions"].length; i++) {
           if (data["sessions"][i].min_age_limit == 45) {
             const index = data["sessions"].indexOf(data["sessions"][i]);
